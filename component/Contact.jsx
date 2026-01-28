@@ -6,38 +6,49 @@ const Contact = () => {
   const socialLinks = [
     { 
       icon: FaGithub, 
-      href: "https://github.com/yourusername", 
+      href: "https://github.com/Pratham286", 
       label: "GitHub",
       color: "hover:text-gray-900"
     },
     { 
       icon: FaLinkedin, 
-      href: "https://linkedin.com/in/yourusername", 
+      href: "https://www.linkedin.com/in/pratham-chaurasiya-a3a96a251/", 
       label: "LinkedIn",
       color: "hover:text-blue-600"
     },
     { 
-      icon: FaTwitter, 
-      href: "https://twitter.com/yourusername", 
-      label: "Twitter",
-      color: "hover:text-blue-400"
-    },
-    { 
       icon: MdEmail, 
-      href: "mailto:your.email@example.com", 
+      href: "mailto:prathamece04@gmail.com",
       label: "Email",
       color: "hover:text-red-600"
     },
   ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  // console.log(e.target)
+  const formData = new FormData(e.target);
+  formData.append("access_key", "6d281034-4663-4bad-9e9a-e310f5a5563c");
+
+  const res = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData
+  });
+
+  const data = await res.json();
+
+  if (data.success) {
+    alert("Message sent successfully!");
+    e.target.reset();
+  } else {
+    alert("Something went wrong. Please try again.");
+  }
+};
+
 
   return (
     <div id="contact" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
-      <div className="max-w-4xl w-full">
+      <div className="max-w-5xl w-full">
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-12">
           Get In <span className="text-blue-600">Touch</span>

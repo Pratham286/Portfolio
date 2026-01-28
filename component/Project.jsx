@@ -1,22 +1,51 @@
 import React from 'react'
 
 const Project = () => {
+
   const projects = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      image: "https://via.placeholder.com/600x400",
-      techStack: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
-      summary: "A full-stack e-commerce platform with user authentication, product management, and payment integration.",
-      liveLink: "https://example.com",
-      githubLink: "https://github.com/username/project"
-    },
-    // Add more projects here
-  ];
+  {
+    id: 1,
+    title: "BrieflyAI",
+    image: "/Project1.png",
+    techStack: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "Tailwind CSS",
+      "Cohere API",
+      "REST APIs"
+    ],
+    summary:
+      "An AI-powered text summarization platform with multiple summary modes, secure authentication, and scalable REST APIs.",
+    liveLink: "https://brieflyai-frontend.onrender.com/",
+    githubLink: "https://github.com/Pratham286/Text-Summarizer"
+  },
+  {
+    id: 2,
+    title: "ChatConnect",
+    image: "/Project2.png",
+    techStack: [
+      "React",
+      "Node.js",
+      "Socket.io",
+      "WebSockets",
+      "MongoDB",
+      "JWT",
+      "Tailwind CSS"
+    ],
+    summary:
+      "A real-time chat application supporting one-to-one and group messaging with secure authentication and low-latency communication.",
+    liveLink: "https://chatapp-frontend-pw2b.onrender.com/",
+    githubLink: "https://github.com/Pratham286/ChatApp"
+  }
+];
+
 
   return (
     <div id="projects" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
-      <div className="max-w-4xl w-full">
+      <div className="max-w-5xl w-full">
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-12">
           My <span className="text-blue-600">Projects</span>

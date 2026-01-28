@@ -1,33 +1,73 @@
 import React from 'react'
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      id: 1,
-      title: "Languages",
-      skills: ["JavaScript", "Python", "Java", "C++", "TypeScript"]
-    },
-    {
-      id: 2,
-      title: "Frontend",
-      skills: ["React", "Tailwind CSS", "HTML", "CSS", "Redux"]
-    },
-    {
-      id: 3,
-      title: "Backend",
-      skills: ["Node.js", "Express", "MongoDB", "PostgreSQL", "REST APIs"]
-    },
-    {
-      id: 4,
-      title: "Tools & Technologies",
-      skills: ["Git", "GitHub", "VS Code", "Docker", "Postman"]
-    }
-    // Add more categories here
-  ];
+const skillCategories = [
+  {
+    id: 1,
+    title: "Programming Languages",
+    skills: ["C", "C++", "JavaScript", "TypeScript"]
+  },
+  {
+    id: 2,
+    title: "Frontend Development",
+    skills: [
+      "React",
+      "HTML",
+      "CSS",
+      "Tailwind CSS",
+      "Redux",
+      "Responsive Design"
+    ]
+  },
+  {
+    id: 3,
+    title: "Backend Development",
+    skills: [
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "WebSockets",
+      "Authentication & Authorization"
+    ]
+  },
+  {
+    id: 4,
+    title: "Databases",
+    skills: ["MongoDB", "PostgreSQL", "MySQL"]
+  },
+  {
+    id: 5,
+    title: "Tools & Platforms",
+    skills: [
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Postman",
+      "Docker",
+      "Bash"
+    ]
+  },
+  {
+    id: 6,
+    title: "Deployment & DevOps",
+    skills: ["Vercel", "Render", "CI/CD Basics"]
+  },
+  {
+    id: 7,
+    title: "Core Computer Science",
+    skills: [
+      "Data Structures & Algorithms",
+      "Object-Oriented Programming",
+      "Operating Systems",
+      "DBMS"
+    ]
+  }
+];
+
 
   return (
     <div id="skills" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
-      <div className="max-w-4xl w-full">
+      <div className="max-w-5xl w-full">
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-12">
           My <span className="text-blue-600">Skills</span>
