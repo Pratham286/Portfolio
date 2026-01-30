@@ -25,13 +25,13 @@ function Navbar() {
     }
   }, [isMenuOpen]);
 
-const navLinks = [
+  const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
     { name: "Contact", href: "#contact" },
-   ];
+  ];
 
   return (
     <nav
@@ -43,8 +43,8 @@ const navLinks = [
         <div className="flex items-center justify-between h-16">
           {/* Left side - Title */}
           <div className="flex-shrink-0">
-  <h1 className="text-2xl font-bold text-gray-900">Your Name</h1>
-</div>
+            <h1 className="text-2xl font-bold text-gray-900">My Portfolio</h1>
+          </div>
 
           {/* Desktop Navigation - Hidden on mobile */}
           <div className="hidden md:flex items-center space-x-4 gap-4">

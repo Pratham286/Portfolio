@@ -24,27 +24,69 @@ const About = () => {
     },
   ];
   const achievements = [
-  {
-    title: "Smart India Hackathon",
-    description: "Qualified for Round 2 of Smart India Hackathon (SIH) 2024."
-  },
-  {
-    title: "Exam Rank",
-    description: "Secured AIR 4961 in JEE Advanced 2022 and AIR 7751 in JEE Main 2022."
-  },
-  {
-    title: "Codeforces Contests",
-    description: "Placed 197th in Codeforces Round 1029 (Div. 3) and 809th in Codeforces Round 1042 (Div. 3)."
-  },
-  {
-    title: "LeetCode Contests",
-    description: "Ranked 704th in LeetCode Biweekly Contest 138 and 438th in LeetCode Biweekly Contest 166."
-  },
-  {
-    title: "CodeChef Contests",
-    description: "Secured 178th rank in CodeChef Starters 199 (Div. 2) and 169th rank in CodeChef Starters 202 (Div. 2)."
-  }
-];
+    {
+      title: "Smart India Hackathon",
+      description: "Qualified for Round 2 of Smart India Hackathon (SIH) 2024.",
+    },
+    {
+      title: "Exam Rank",
+      description:
+        "Secured AIR 4961 in JEE Advanced 2022 and AIR 7751 in JEE Main 2022.",
+    },
+    {
+      title: "Codeforces Contests",
+      description:
+        "Placed 197th in Codeforces Round 1029 (Div. 3) and 809th in Codeforces Round 1042 (Div. 3).",
+    },
+    {
+      title: "LeetCode Contests",
+      description:
+        "Ranked 704th in LeetCode Biweekly Contest 138 and 438th in LeetCode Biweekly Contest 166.",
+    },
+    {
+      title: "CodeChef Contests",
+      description:
+        "Secured 178th rank in CodeChef Starters 199 (Div. 2) and 169th rank in CodeChef Starters 202 (Div. 2).",
+    },
+  ];
+  const code = [
+    {
+      id: 1,
+      title: "Codeforces",
+      profile: "Pc_286",
+      rating: 1573,
+      tag: "Specialist",
+      problemsSolved: "550+",
+      link: "https://codeforces.com/profile/Pc_286",
+    },
+    {
+      id: 2,
+      title: "LeetCode",
+      profile: "Pc_286",
+      rating: 1967,
+      tag: "Knight",
+      problemsSolved: "450+",
+      link: "https://leetcode.com/u/Pc_286/",
+    },
+    {
+      id: 3,
+      title: "CodeChef",
+      profile: "pc_286",
+      rating: 1772,
+      tag: "3-Star",
+      problemsSolved: "",
+      link: "https://www.codechef.com/users/pc_286", // add codechef profile link
+    },
+    {
+      id: 4,
+      title: "GeeksforGeeks",
+      profile: "Pc_286", // you can fill
+      rating: "",
+      tag: "",
+      problemsSolved: "230+",
+      link: "https://www.geeksforgeeks.org/profile/pc_286", // add gfg profile link
+    },
+  ];
 
   return (
     <div
@@ -125,61 +167,77 @@ const About = () => {
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* Codeforces */}
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                Codeforces
-              </h3>
-              {/* Content goes here */}
-            </div>
+            {code.map((platform) => (
+              <a
+                key={platform.id}
+                href={platform.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-lg hover:border-blue-300 transition-all cursor-pointer"
+              >
+                {/* Platform Title */}
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                  {platform.title}
+                </h3>
 
-            {/* LeetCode */}
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                LeetCode
-              </h3>
-              {/* Content goes here */}
-            </div>
+                {/* Profile Details */}
+                <div className="grid grid-cols-2 gap-x-4 gap-y-3">
+                  {platform.profile && (
+                    <p className="text-gray-700">
+                      <span className="font-medium">Profile:</span>{" "}
+                      {platform.profile}
+                    </p>
+                  )}
 
-            {/* CodeChef */}
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                CodeChef
-              </h3>
-              {/* Content goes here */}
-            </div>
+                  {platform.rating && (
+                    <p className="text-gray-700">
+                      <span className="font-medium">Rating:</span>{" "}
+                      {platform.rating}
+                    </p>
+                  )}
 
-            {/* GeeksforGeeks */}
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                GeeksforGeeks
-              </h3>
-              {/* Content goes here */}
-            </div>
+                  {platform.tag && (
+                    <p className="text-gray-700">
+                      <span className="font-medium">Rank:</span>{" "}
+                      <span className="px-3 py-1 bg-blue-100 text-blue-600 text-sm font-medium rounded-full">
+                        {platform.tag}
+                      </span>
+                    </p>
+                  )}
+
+                  {platform.problemsSolved && (
+                    <p className="text-gray-700">
+                      <span className="font-medium">Problems:</span>{" "}
+                      {platform.problemsSolved}
+                    </p>
+                  )}
+                </div>
+              </a>
+            ))}
           </div>
         </div>
 
-<div className="mb-12">
-  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
-    Achievements
-  </h2>
+        <div className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+            Achievements
+          </h2>
 
-  <div className="space-y-6">
-    {achievements.map((achievement, index) => (
-      <div 
-        key={index}
-        className="bg-white p-6 rounded-lg border-2 border-gray-200 hover:border-blue-600 hover:shadow-lg transition-all duration-300"
-      >
-        <h3 className="text-xl font-semibold text-gray-800 mb-3">
-          {achievement.title}
-        </h3>
-        <p className="text-base sm:text-lg text-gray-700">
-          {achievement.description}
-        </p>
-      </div>
-    ))}
-  </div>
-</div>
+          <div className="space-y-6">
+            {achievements.map((achievement, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg border-2 border-gray-200 hover:border-blue-600 hover:shadow-lg transition-all duration-300"
+              >
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                  {achievement.title}
+                </h3>
+                <p className="text-base sm:text-lg text-gray-700">
+                  {achievement.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

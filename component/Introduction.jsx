@@ -1,6 +1,6 @@
 import React from "react";
 import pfp from "../src/pfp.jpg";
-
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 const Introduction = () => {
   return (
     <div
@@ -38,11 +38,24 @@ const Introduction = () => {
                 download="Pratham_Chaurasiya_Resume.pdf"
                 className="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors text-center"
               >
-                Download Resume
+                Resume
               </a>
-              {/* <button className="px-6 py-3 bg-gray-200 text-gray-900 font-medium rounded-lg hover:bg-gray-300 transition-colors">
-                Contact Me
-              </button> */}
+              <a
+                href="https://github.com/Pratham286"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-gray-200 text-gray-900 font-medium rounded-lg hover:bg-gray-300 transition-colors"
+              >
+                <FaGithub className="h-6 w-6"/>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/pratham-chaurasiya-a3a96a251/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-gray-200 text-gray-900 font-medium rounded-lg hover:bg-gray-300 transition-colors"
+              >
+                <FaLinkedin className="h-6 w-6"/>
+              </a>
             </div>
           </div>
 
