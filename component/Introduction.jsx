@@ -34,7 +34,7 @@ const Introduction = () => {
             {/* Buttons */}
             <div className="flex flex-wrap gap-4">
               <a
-                href="/resume.pdf"
+                href="/resume_1.pdf"
                 download="Pratham_Chaurasiya_Resume.pdf"
                 className="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors text-center"
               >
