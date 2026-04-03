@@ -1,8 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-
-const NAMESPACE = "my-portfolio-pc286";
-const KEY = "number-of-vis";
+import React, { useEffect, useState } from "react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,11 +7,14 @@ const Footer = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const trackVisit = async () => {
+    const fetchCount = async () => {
       try {
-        const res = await axios.get(`https://api.countapi.xyz/hit/${NAMESPACE}/${KEY}`);
-        setCount(res.data.value);
-
+        const res = await fetch(
+          "https://pratham.goatcounter.com/counter/.json"
+        );
+        if (!res.ok) throw new Error("Failed to fetch count");
+        const data = await res.json();
+        setCount(data.count_unique || data.count);
       } catch (err) {
         setError(err.message);
         console.error("Failed to fetch visitor count:", err);
@@ -23,8 +22,7 @@ const Footer = () => {
         setLoading(false);
       }
     };
-
-    trackVisit();
+    fetchCount();
   }, []);
 
   const renderCount = () => {
