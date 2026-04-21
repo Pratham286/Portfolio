@@ -1,5 +1,10 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
- html {
-     scroll-behavior: smooth;
-   }
+@theme {
+  --font-roboto: 'Roboto', cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}

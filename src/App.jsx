@@ -1,6 +1,6 @@
-import Content from '../component/Content'
-import Footer from '../component/Footer'
-import Navbar from '../component/Navbar'
+import Content from './component/Content'
+import Footer from './component/Footer'
+import Navbar from './component/Navbar'
 import './App.css'
 
 function App() {
